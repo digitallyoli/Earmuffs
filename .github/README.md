@@ -5,7 +5,7 @@
 <p align="center">A simple volume limiter for Windows, protecting your hearing without you noticing.</p>
 
 <p align="center">
-  <img width="700" src="https://github.com/digitallyoli/Earmuffs/blob/master/.github/assets/screenshot.png?raw=true&v=6">
+  <img width="700" src="https://github.com/digitallyoli/Earmuffs/blob/master/.github/assets/screenshot.png?raw=true">
 </p>
 
 ## Features
@@ -23,7 +23,8 @@
 
 ## Uninstalling
 
-To completely remove Earmuffs from your system, delete the following files/folders: 
+To completely remove Earmuffs from your system, delete the following files/folders:
+
 - `Earmuffs.exe`
 - `%appdata%\oli.digital\Earmuffs`
 - `%temp%\.net\Earmuffs`
@@ -32,7 +33,9 @@ To completely remove Earmuffs from your system, delete the following files/folde
 
 Earmuffs is completely free and made in my spare time. If Earmuffs has been helpful to you, consider supporting development by making a donation!
 
-<a href="https://www.buymeacoffee.com/digitallyoli" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" alt="Buy Me A Coffee" style="height: 60px !important;width: 217px !important;" ></a>
+<a href="https://www.buymeacoffee.com/digitallyoli" target="_blank">
+  <img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" alt="Buy Me A Coffee" height="60">
+</a>
 
 ## License
 
