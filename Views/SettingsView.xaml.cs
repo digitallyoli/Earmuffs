@@ -38,7 +38,7 @@ public sealed partial class SettingsView
 
     private async void checkUpdates_Click(object sender, RoutedEventArgs args)
     {
-        await Launcher.LaunchUriAsync(new Uri("https://github.com/digitallyoli/earmuffs/releases"));
+        await Launcher.LaunchUriAsync(new Uri("https://github.com/digitallyoli/earmuffs/releases/latest"));
     }
 
     private async void reportBug_Click(object sender, RoutedEventArgs args)
