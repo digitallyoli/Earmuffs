@@ -1,0 +1,27 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 18
+VisualStudioVersion = 18.1.11312.151
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Earmuffs", "Earmuffs.csproj", "{2EE99B03-A33A-D0B3-C76F-27209BE9C37C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		All|Any CPU = All|Any CPU
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2EE99B03-A33A-D0B3-C76F-27209BE9C37C}.All|Any CPU.ActiveCfg = Debug|Any CPU
+		{2EE99B03-A33A-D0B3-C76F-27209BE9C37C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2EE99B03-A33A-D0B3-C76F-27209BE9C37C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2EE99B03-A33A-D0B3-C76F-27209BE9C37C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2EE99B03-A33A-D0B3-C76F-27209BE9C37C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {843906B8-C42F-4B2A-B1BC-6CE5BA66D15E}
+	EndGlobalSection
+EndGlobal

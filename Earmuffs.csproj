@@ -1,0 +1,57 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+	<PropertyGroup>
+		<ApplicationIcon>Assets\Logo.ico</ApplicationIcon>
+		<Company>oli.digital</Company>
+		<Copyright>© 2026. All rights reserved.</Copyright>
+		<Version>1.0.0</Version>
+	</PropertyGroup>
+
+	<PropertyGroup>
+		<AppendRuntimeIdentifierToOutputPath>false</AppendRuntimeIdentifierToOutputPath>
+		<AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+		<ApplicationManifest>app.manifest</ApplicationManifest>
+		<DefaultLanguage>en-GB</DefaultLanguage>
+		<DefineConstants>$(DefineConstants);HAS_WINUI</DefineConstants>
+		<EnableMsixTooling>true</EnableMsixTooling>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<LangVersion>latest</LangVersion>
+		<NoWarn>$(NoWarn);CS8785</NoWarn>
+		<Nullable>enable</Nullable>
+		<OutputType>WinExe</OutputType>
+		<Platforms>AnyCPU</Platforms>
+		<PlatformTarget>AnyCPU</PlatformTarget>
+		<SelfContained>true</SelfContained>
+		<WindowsPackageType>None</WindowsPackageType>
+		<WindowsAppSDKSelfContained>true</WindowsAppSDKSelfContained>
+		<TargetFramework>net10.0-windows10.0.22000.0</TargetFramework>
+		<TargetPlatformMinVersion>10.0.18362.0</TargetPlatformMinVersion>
+		<UseWinUI>true</UseWinUI>
+		<PublishSingleFile>true</PublishSingleFile>
+		<EnableCompressionInSingleFile>True</EnableCompressionInSingleFile>
+	</PropertyGroup>
+
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|anyCPU'">
+		<DebugType>embedded</DebugType>
+	</PropertyGroup>
+
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|anyCPU'">
+		<DebugType>embedded</DebugType>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<Manifest Include="$(ApplicationManifest)" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<Content Include="Assets\Logo.ico" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<PackageReference Include="CommunityToolkit.Mvvm" Version="8.4.0" />
+		<PackageReference Include="CommunityToolkit.WinUI.Controls.SettingsControls" Version="8.2.251219" />
+		<PackageReference Include="H.NotifyIcon.Winui" Version="2.4.1" />
+		<PackageReference Include="Microsoft.Extensions.Logging.Console" Version="10.0.2" />
+		<PackageReference Include="Microsoft.Windows.SDK.BuildTools" Version="10.0.26100.7463" />
+		<PackageReference Include="Microsoft.WindowsAppSDK" Version="1.8.260101001" />
+	</ItemGroup>
+</Project>

@@ -1,0 +1,144 @@
+﻿<Page x:Class="Earmuffs.Views.SettingsView"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+      xmlns:ui="using:CommunityToolkit.WinUI"
+      xmlns:controls="using:CommunityToolkit.WinUI.Controls"
+      xmlns:local="using:Earmuffs"
+      mc:Ignorable="d">
+    <Page.Resources>
+        <Style x:Key="SettingsSectionHeaderTextBlockStyle"
+                   BasedOn="{StaticResource BodyStrongTextBlockStyle}"
+                   TargetType="TextBlock">
+            <Style.Setters>
+                <Setter Property="Margin" 
+                        Value="2,14,2,2" />
+            </Style.Setters>
+        </Style>
+        <x:Double x:Key="SettingsCardSpacing">8</x:Double>
+    </Page.Resources>
+    <Grid MaxWidth="1064">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <TextBlock Text="Settings"
+                   Margin="26,24,26,24"
+                   Style="{StaticResource SubtitleTextBlockStyle}" />
+
+        <ScrollViewer Grid.Row="1">
+            <StackPanel Spacing="{StaticResource SettingsCardSpacing}"
+                        Padding="24,0,24,24">
+                <StackPanel.ChildrenTransitions>
+                    <RepositionThemeTransition IsStaggeringEnabled="False" />
+                </StackPanel.ChildrenTransitions>
+
+                <TextBlock Text="Sound"
+                           Margin="2,0,2,2"
+                           Style="{StaticResource SettingsSectionHeaderTextBlockStyle}" />
+
+                <controls:SettingsExpander HeaderIcon="{ui:FontIcon Glyph=&#xE74F;}"
+                                           Header="Hard limit" 
+                                           Description="Set a maximum volume that you can't exceed">
+                    <ToggleSwitch IsOn="{x:Bind local:App.VolumeService.HardLimitToggle, Mode=TwoWay}" />
+                    <controls:SettingsExpander.Items>
+                        <controls:SettingsCard Header="Maximum volume">
+                            <Slider Width="200" 
+                                    Value="{x:Bind local:App.VolumeService.HardLimitValue, Mode=TwoWay}" />
+                        </controls:SettingsCard>
+                    </controls:SettingsExpander.Items>
+                </controls:SettingsExpander>
+
+                <controls:SettingsExpander HeaderIcon="{ui:FontIcon Glyph=&#xE994;}"
+                                           Header="Soft limit" 
+                                           Description="Gradually decreases the volume to a target level">
+                    <ToggleSwitch IsOn="{x:Bind local:App.VolumeService.SoftLimitToggle, Mode=TwoWay}" />
+                    <controls:SettingsExpander.Items>
+                        <controls:SettingsCard Header="Target volume">
+                            <Slider Width="200" 
+                                    Value="{x:Bind local:App.VolumeService.SoftLimitValue, Mode=TwoWay}" />
+                        </controls:SettingsCard>
+                        <controls:SettingsCard Header="Delay"
+                                               Description="How many seconds before the volume starts to decrease">
+                            <NumberBox SpinButtonPlacementMode="Inline" 
+                                       Minimum="10" 
+                                       Maximum="1200" 
+                                       SmallChange="30" 
+                                       Value="{x:Bind local:App.VolumeService.SoftLimitDelay, Mode=TwoWay}" />
+                        </controls:SettingsCard>
+                        <controls:SettingsCard Header="Duration"
+                                               Description="How many seconds it takes to reach the target volume">
+                            <NumberBox SpinButtonPlacementMode="Inline" 
+                                       Minimum="10"
+                                       Maximum="1200" 
+                                       SmallChange="30" 
+                                       x:Name="SoftLimitDuration" 
+                                       Value="{x:Bind local:App.VolumeService.SoftLimitDuration, Mode=TwoWay}" />
+                        </controls:SettingsCard>
+                    </controls:SettingsExpander.Items>
+                </controls:SettingsExpander>
+
+                <TextBlock Text="Startup"
+                           Style="{StaticResource SettingsSectionHeaderTextBlockStyle}" />
+
+                <controls:SettingsCard x:Name="StartupToggleCard"
+                                       HeaderIcon="{ui:FontIcon Glyph=&#xE7B5;}"
+                                       Header="Start automatically when you sign in">
+                    <ToggleSwitch x:Name="StartupToggle" />
+                </controls:SettingsCard>
+
+                <TextBlock Text="About"
+                           Style="{StaticResource SettingsSectionHeaderTextBlockStyle}" />
+
+                <controls:SettingsCard HeaderIcon="{ui:FontIcon Glyph=&#xEB51;}"
+                                       Header="Donate to Earmuffs"
+                                       IsClickEnabled="True"
+                                       ActionIcon="{ui:FontIcon Glyph=&#xE8A7;}"
+                                       Click="donation_Click" />
+
+                <controls:SettingsExpander Header="Earmuffs"
+                                           Description="© 2026. All rights reserved.">
+                    <controls:SettingsExpander.HeaderIcon>
+                        <ImageIcon Source="ms-appx:///Assets/Logo.ico" />
+                    </controls:SettingsExpander.HeaderIcon>
+                    <TextBlock Text="Version 1.0.0"
+                               Foreground="{ThemeResource TextFillColorSecondaryBrush}"
+                               IsTextSelectionEnabled="True" />
+                    <controls:SettingsExpander.Items>
+                        <controls:SettingsCard Header="More projects by Oli"
+                                               IsClickEnabled="True"
+                                               ActionIcon="{ui:FontIcon Glyph=&#xE8A7;}"
+                                               Click="oli_Click" />
+                        <controls:SettingsCard Header="Check for updates"
+                                               IsClickEnabled="True"
+                                               ActionIcon="{ui:FontIcon Glyph=&#xE8A7;}"
+                                               Click="checkUpdates_Click" />
+                        <controls:SettingsCard Header="Report a bug or issue"
+                                               IsClickEnabled="True"
+                                               ActionIcon="{ui:FontIcon Glyph=&#xE8A7;}"
+                                               Click="reportBug_Click" />
+                        <controls:SettingsCard Header="GitHub repository"
+                                               IsClickEnabled="True"
+                                               ActionIcon="{ui:FontIcon Glyph=&#xE8A7;}"
+                                               Click="github_Click" />
+                        <controls:SettingsCard Header="Acknowledgments"
+                                               HorizontalContentAlignment="Left"
+                                               ContentAlignment="Vertical">
+                            <StackPanel Margin="-12, 0, 0, 0"
+                                        Orientation="Vertical">
+                                <HyperlinkButton Content="WinUI" 
+                                                 NavigateUri="https://github.com/microsoft/microsoft-ui-xaml" />
+                                <HyperlinkButton Content="Windows Community Toolkit" 
+                                                 NavigateUri="https://github.com/CommunityToolkit/Windows" />
+                                <HyperlinkButton Content="H.NotifyIcon" 
+                                                 NavigateUri="https://github.com/HavenDV/H.NotifyIcon" />
+                            </StackPanel>
+                        </controls:SettingsCard>
+                    </controls:SettingsExpander.Items>
+                </controls:SettingsExpander>
+            </StackPanel>
+        </ScrollViewer>
+    </Grid>
+</Page>
