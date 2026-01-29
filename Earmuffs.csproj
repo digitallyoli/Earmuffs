@@ -3,7 +3,7 @@
 		<ApplicationIcon>Assets\Logo.ico</ApplicationIcon>
 		<Company>oli.digital</Company>
 		<Copyright>© 2026. All rights reserved.</Copyright>
-		<Version>1.0.0</Version>
+		<Version>1.0.1</Version>
 	</PropertyGroup>
 
 	<PropertyGroup>

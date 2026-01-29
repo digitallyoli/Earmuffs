@@ -103,7 +103,7 @@
                     <controls:SettingsExpander.HeaderIcon>
                         <ImageIcon Source="ms-appx:///Assets/Logo.ico" />
                     </controls:SettingsExpander.HeaderIcon>
-                    <TextBlock Text="Version 1.0.0"
+                    <TextBlock Text="Version 1.0.1"
                                Foreground="{ThemeResource TextFillColorSecondaryBrush}"
                                IsTextSelectionEnabled="True" />
                     <controls:SettingsExpander.Items>
