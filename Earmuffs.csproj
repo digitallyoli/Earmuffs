@@ -28,6 +28,7 @@
 		<UseWinUI>true</UseWinUI>
 		<PublishSingleFile>true</PublishSingleFile>
 		<EnableCompressionInSingleFile>True</EnableCompressionInSingleFile>
+		<IncludeSourceRevisionInInformationalVersion>false</IncludeSourceRevisionInInformationalVersion>
 	</PropertyGroup>
 
 	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|anyCPU'">
