@@ -23,6 +23,10 @@ public sealed partial class App : Application
         {
             MainWindow?.Activate();
         }
+        else
+        {
+            MainWindow?.Hide();
+        }
     }
 
     protected async override void OnLaunched(LaunchActivatedEventArgs args)
